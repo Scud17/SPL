@@ -24,7 +24,6 @@ def update_all(root, image_view, queue):
     root.after(0, func=lambda: update_all(root, image_view, queue))
 
 
-# multiprocessing image processing functions-------------------------------------
 def image_capture(queue):
     cap = cv2.VideoCapture(0)
     while True:
@@ -63,9 +62,6 @@ if __name__ == '__main__':
     p = Process(target=image_capture, args=(queue,))
     p.start()
     print("image capture process has started...")
-
-
-    print("quit button initialized...")
     # setup the update callback
     root.after(0, func=lambda: update_all(root, image_view, queue))
     print("root.after was called...")
