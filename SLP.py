@@ -44,7 +44,7 @@ if __name__ == '__main__':
     control_frame = tk.Frame(root)
     control_frame.pack(fill=tk.X, side=tk.BOTTOM)
     print("GUI initialized...")
-    image_view = tk.Label(master=root)  # label for the video frame
+    image_view = tk.Label(master=root)
     image_view.pack()
     # Controls
     scan_button = tk.Button(master=control_frame, text='Scan Lot', command=lambda: quit_(root, p))
